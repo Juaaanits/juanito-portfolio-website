@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Github, Linkedin } from "lucide-react"
+import { Github, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,7 +7,8 @@ export default function Footer() {
       <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
         <div className="text-center md:text-left">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Giovani Moutinho. All rights reserved.
+            &copy; {new Date().getFullYear()} Juanito M. Ramos II. All rights
+            reserved.
           </p>
         </div>
         <div className="flex items-center gap-4">
@@ -32,5 +33,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

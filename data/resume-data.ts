@@ -1,70 +1,95 @@
 export type WorkExperience = {
-  title: string
-  company: string
-  period: string
-  location: string
-  responsibilities: string[]
-}
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  responsibilities: string[];
+};
 
 export type Language = {
-  name: string
-  level: string
-  certificate?: string
-}
+  name: string;
+  level: string;
+  certificate?: string;
+};
 
 export type Publication = {
-  title: string
-  description: string
-  year: string
-  link?: string
-}
+  title: string;
+  description: string;
+  year: string;
+  link?: string;
+};
 
 export type ResumeData = {
   personalInfo: {
-    name: string
-    title: string
-    email: string
-    location: string
-    linkedin: string
-    github: string | null
-    website: string
-    photo?: string
-    yearsOfExperience: string
-    teamLeadExperience: string
-  }
-  summary: string[]
+    name: string;
+    title: string;
+    email: string;
+    location: string;
+    linkedin: string;
+    github: string | null;
+    website: string;
+    photo?: string;
+    yearsOfExperience: string;
+    specificExperience: string;
+  };
+  summary: string[];
   skills: {
-    languages: string[]
-    architecture: string[]
-    cloud: string[]
-    data: string[]
-    quality: string[]
-  }
-  experience: WorkExperience[]
-  hardSkills: string[]
-  softSkills: string[]
-  languages: Language[]
-  publications: Publication[]
-}
+    languages: string[];
+    architecture: string[];
+    cloud: string[];
+    data: string[];
+    quality: string[];
+  };
+  experience: WorkExperience[];
+  hardSkills: string[];
+  softSkills: string[];
+  languages: Language[];
+  publications: Publication[];
+};
 
 const resumeData: ResumeData = {
   personalInfo: {
-    name: "Giovani Moutinho",
-    title: "Senior Software Engineer",
-    email: "contact@mgiovani.com",
-    location: "Brazil",
-    linkedin: "https://www.linkedin.com/in/mgiovani",
-    github: "https://github.com/mgiovani/",
-    website: "https://mgiovani.com",
+    name: "Juanito M. Ramos II",
+    title: "System Engineer | AI & Data Engineering | Cloud Engineering",
+    email: "juanitoramos113@gmail.com",
+    location: "Philippines",
+    linkedin: "https://www.linkedin.com/in/juanitoramos/",
+    github: "https://github.com/Juaaanits",
+    website: "https://juanito-portfolio-website.vercel.app/",
     photo: "/images/profile.png",
-    yearsOfExperience: "13+ years of coding experience",
-    teamLeadExperience: "5+ years leading backend teams on Python, FastAPI, Django, and AWS",
+    yearsOfExperience:
+      "1+ years of professional experience in systems, cloud, and data engineering",
+    specificExperience:
+      "Experience building and supporting backend systems, cloud infrastructure (AWS & Azure), and AI-powered data pipelines in collaborative engineering teams",
   },
-  summary: ["13+ years of coding experience and 5+ years leading backend teams on Python, FastAPI, Django, and AWS"],
+  summary: [
+    "13+ years of coding experience and 5+ years leading backend teams on Python, FastAPI, Django, and AWS",
+  ],
   skills: {
-    languages: ["Python", "FastAPI", "SQLAlchemy", "Django REST", "TypeScript", "Node.js", "Express"],
-    architecture: ["Clean Code/Architecture", "DDD", "Microservices", "Pub/Sub", "BFF", "REST", "GraphQL"],
-    cloud: ["AWS – ECS, Lambda, RDS, S3", "Docker", "Kubernetes", "GitHub Actions"],
+    languages: [
+      "Python",
+      "FastAPI",
+      "SQLAlchemy",
+      "Django REST",
+      "TypeScript",
+      "Node.js",
+      "Express",
+    ],
+    architecture: [
+      "Clean Code/Architecture",
+      "DDD",
+      "Microservices",
+      "Pub/Sub",
+      "BFF",
+      "REST",
+      "GraphQL",
+    ],
+    cloud: [
+      "AWS – ECS, Lambda, RDS, S3",
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+    ],
     data: ["PostgreSQL", "Redis", "Celery"],
     quality: ["TDD", "Pytest", "Ruff", "CI/CD"],
   },
@@ -167,21 +192,27 @@ const resumeData: ResumeData = {
   ],
   publications: [
     {
-      title: "Estratégias Pedagógicas para o Processo de Ensino-Aprendizagem de Algoritmos",
-      description: "A publication exploring pedagogical strategies for teaching and learning algorithms.",
+      title:
+        "Estratégias Pedagógicas para o Processo de Ensino-Aprendizagem de Algoritmos",
+      description:
+        "A publication exploring pedagogical strategies for teaching and learning algorithms.",
       year: "2019",
     },
     {
-      title: "Estudos de Técnicas de Mineração de Dados Aplicadas em Ambientes Sistematizados de Bibliotecas",
-      description: "A study on data mining techniques applied to systematized library environments.",
+      title:
+        "Estudos de Técnicas de Mineração de Dados Aplicadas em Ambientes Sistematizados de Bibliotecas",
+      description:
+        "A study on data mining techniques applied to systematized library environments.",
       year: "2018",
     },
     {
-      title: "Carros de Combate na Selva: Utilização de VBCCCs no Teatro de Operações da Amazônia",
-      description: "A publication on combat vehicles in jungle environments, focusing on operations in the Amazon.",
+      title:
+        "Carros de Combate na Selva: Utilização de VBCCCs no Teatro de Operações da Amazônia",
+      description:
+        "A publication on combat vehicles in jungle environments, focusing on operations in the Amazon.",
       year: "2017",
     },
   ],
-}
+};
 
-export default resumeData
+export default resumeData;

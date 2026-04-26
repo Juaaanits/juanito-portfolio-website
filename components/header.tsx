@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { HeaderClient } from "./header-client"
+import Link from "next/link";
+import { HeaderClient } from "./header-client";
 
 // Navigation items - defined server-side
 const navItems = [
@@ -7,14 +7,14 @@ const navItems = [
   { name: "Resume", path: "/resume" },
   { name: "Projects", path: "/projects" },
   { name: "Contact", path: "/contact" },
-]
+];
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-zinc-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60">
       <div className="container flex h-14 items-center">
         <Link href="/" className="mr-6">
-          <span className="text-xl font-bold">GM</span>
+          <span className="text-xl font-bold">JR</span>
         </Link>
 
         {/* Desktop Navigation - Server Rendered */}
@@ -35,5 +35,5 @@ export default function Header() {
         <HeaderClient navItems={navItems} />
       </div>
     </header>
-  )
+  );
 }
