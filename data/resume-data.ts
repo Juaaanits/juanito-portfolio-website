@@ -19,6 +19,11 @@ export type Publication = {
   link?: string;
 };
 
+export type SkillCategory = {
+  category: string;
+  items: string[];
+};
+
 export type ResumeData = {
   personalInfo: {
     name: string;
@@ -33,13 +38,7 @@ export type ResumeData = {
     specificExperience: string;
   };
   summary: string[];
-  skills: {
-    languages: string[];
-    architecture: string[];
-    cloud: string[];
-    data: string[];
-    quality: string[];
-  };
+  skills: SkillCategory[];
   experience: WorkExperience[];
   hardSkills: string[];
   softSkills: string[];
@@ -50,7 +49,7 @@ export type ResumeData = {
 const resumeData: ResumeData = {
   personalInfo: {
     name: "Juanito M. Ramos II",
-    title: "System Engineer | AI & Data Engineering | Cloud Engineering",
+    title: "System Engineer | Cloud & Data Engineering | AI/ML Support",
     email: "juanitoramos113@gmail.com",
     location: "Philippines",
     linkedin: "https://www.linkedin.com/in/juanitoramos/",
@@ -58,161 +57,157 @@ const resumeData: ResumeData = {
     website: "https://juanito-portfolio-website.vercel.app/",
     photo: "/images/profile.png",
     yearsOfExperience:
-      "1+ years of professional experience in systems, cloud, and data engineering",
+      "1+ years of professional experience in system, cloud, and data-focused engineering",
     specificExperience:
-      "Experience building and supporting backend systems, cloud infrastructure (AWS & Azure), and AI-powered data pipelines in collaborative engineering teams",
+      "Experience spanning SQL Server operations, Azure and AWS infrastructure, data migration, monitoring, and AI-assisted OCR and product-matching workflows",
   },
   summary: [
-    "13+ years of coding experience and 5+ years leading backend teams on Python, FastAPI, Django, and AWS",
+    "System Engineer with professional experience in cloud infrastructure, SQL Server administration, monitoring, migration planning, and AI/ML support for data extraction workflows.",
   ],
-  skills: {
-    languages: [
-      "Python",
-      "FastAPI",
-      "SQLAlchemy",
-      "Django REST",
-      "TypeScript",
-      "Node.js",
-      "Express",
-    ],
-    architecture: [
-      "Clean Code/Architecture",
-      "DDD",
-      "Microservices",
-      "Pub/Sub",
-      "BFF",
-      "REST",
-      "GraphQL",
-    ],
-    cloud: [
-      "AWS – ECS, Lambda, RDS, S3",
-      "Docker",
-      "Kubernetes",
-      "GitHub Actions",
-    ],
-    data: ["PostgreSQL", "Redis", "Celery"],
-    quality: ["TDD", "Pytest", "Ruff", "CI/CD"],
-  },
+  skills: [
+    {
+      category: "Languages",
+      items: ["Python", "TypeScript", "JavaScript", "PHP", "SQL", "C++"],
+    },
+    {
+      category: "Cloud & DevOps",
+      items: [
+        "Linux",
+        "Bash",
+        "AWS",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "Prometheus",
+        "Grafana",
+      ],
+    },
+    {
+      category: "Database Systems",
+      items: [
+        "SQL Server",
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Supabase",
+        "Firebase",
+      ],
+    },
+    {
+      category: "AI & Machine Learning",
+      items: [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "Scikit-learn",
+        "OCR Pipelines",
+        "LLM Integration",
+        "n8n (workflow automation)",
+      ],
+    },
+    {
+      category: "Full-Stack Development (Web & Mobile)",
+      items: [
+        "Node.js",
+        "Express",
+        "Flask",
+        "React",
+        "Next.js",
+        "React Native",
+        "TailwindCSS",
+      ],
+    },
+    {
+      category: "Data Visualization",
+      items: ["PowerBI", "Excel"],
+    },
+  ],
   experience: [
     {
-      title: "Senior Software Engineer",
-      company: "Prenuvo",
-      period: "Jan 2023 - Present",
-      location: "Remote, United States",
+      title: "AI/ML Engineer Support (Volunteer)",
+      company: "ShopQuick",
+      period: "April 2026 - Present",
+      location: "Remote",
       responsibilities: [
-        "Implemented performance enhancements that cut response times by 25% through optimized database access and resource management.",
-        "Designed and built backend support for AI-powered tools used by radiologists, boosting workflow efficiency.",
-        "Created and rolled out a self-service discount system, giving Sales fine-grained control over promotions.",
-        "Led an external-service integration that improved operational efficiency and contributed to seasonal revenue gains.",
+        "Designed an OCR-to-SKU normalization pipeline for receipt data extraction and product matching, defining system architecture and component interactions using Google Cloud Vision, GPT-4, hybrid matching (fuzzy search and embeddings), confidence-based validation, and storage using Supabase.",
       ],
     },
     {
-      title: "Software Engineer",
-      company: "Perflo",
-      period: "Nov 2021 - Nov 2022",
-      location: "Remote, United States",
+      title: "System Engineer (Cloud & Data Focus)",
+      company: "Solvento Philippines, Inc.",
+      period: "April 2025 - Present",
+      location: "Hybrid",
       responsibilities: [
-        "Built an asynchronous processing mechanism with Celery and Redis, enabling seamless background task handling.",
-        "Engineered a Microsoft Teams bot to collect critical user data and integrate it into the main web application.",
-        "Developed RESTful APIs with Django and DRF to ensure secure, efficient data transfer.",
+        "Designed and implemented a weekly full backup strategy for a production OLTP SQL Server environment, improving data reliability and strengthening recovery readiness.",
+        "Executed large-scale data migration across staging and production environments, ensuring data integrity and minimizing system downtime during deployments.",
+        "Developed SQL Server filegroup and partitioning strategies to optimize query performance for high-volume datasets.",
+        "Built a real-time monitoring dashboard using Grafana, integrating SQL Server and Azure App Services, reducing manual monitoring effort by approximately 70-80%.",
+        "Monitored Azure and SQL Server performance metrics and logs, improving system visibility and accelerating incident detection and response.",
       ],
     },
     {
-      title: "Software Engineer",
-      company: "Olist",
-      period: "Jun 2020 - Oct 2021",
-      location: "Remote, Brazil",
+      title: "Technology Infrastructure Bootcamp Trainee (Internship)",
+      company: "Solvento Philippines, Inc.",
+      period: "January 2025 - March 2025",
+      location: "Hybrid",
       responsibilities: [
-        "Developed RESTful APIs and microservices using a pub/sub architecture, increasing system scalability.",
-        "Modernized legacy apps by refactoring code and improving database interactions, lowering latency.",
-        "Implemented a Backend-for-Frontend layer with Node.js and Express, improving performance and simplifying client development.",
-        "Provided onboarding and mentoring for new team members, ensuring alignment with best practices.",
-      ],
-    },
-    {
-      title: "Full-Stack Engineer (Part-Time)",
-      company: "Advogar",
-      period: "Aug 2019 - Oct 2021",
-      location: "Remote, Brazil",
-      responsibilities: [
-        "Added advanced image processing and third-party integrations to expand API capabilities.",
-        "Led backend integration between core services, ensuring consistent data flow.",
-      ],
-    },
-    {
-      title: "Development Team Lead & Software Developer",
-      company: "Justiça Fácil",
-      period: "Mar 2019 - Jul 2020",
-      location: "Remote, Brazil",
-      responsibilities: [
-        "Coordinated a distributed team to deliver high-priority features on schedule.",
-        "Built asynchronous web crawlers that reduced specific search tasks from two hours to two minutes.",
-        "Developed features that streamlined QA workflows, saving up to eight hours per tester each week.",
+        "Designed a hybrid AWS cloud architecture including multi-AZ VPC, load balancing, auto-scaling, and high-availability RDS setups to support scalable and fault-tolerant applications.",
+        "Developed database and file migration strategies using AWS DMS and AWS DataSync, enabling seamless transition from on-premise systems to cloud infrastructure.",
+        "Created a phased migration plan with detailed cost estimation and infrastructure design, providing a clear roadmap for cloud adoption and scalability.",
       ],
     },
   ],
   hardSkills: [
-    "Python",
-    "FastAPI",
-    "SQLAlchemy",
-    "Django REST",
-    "TypeScript",
-    "Node.js",
-    "Express",
-    "Clean Architecture",
-    "DDD",
-    "Microservices",
+    "Linux",
+    "Bash",
     "AWS",
+    "Azure",
     "Docker",
     "Kubernetes",
+    "Prometheus",
+    "Grafana",
+    "SQL Server",
     "PostgreSQL",
-    "Redis",
-    "Celery",
-    "TDD",
-    "Pytest",
+    "MySQL",
+    "MongoDB",
+    "Supabase",
+    "Firebase",
+    "Python",
+    "TensorFlow",
+    "Keras",
+    "Scikit-learn",
+    "OCR Pipelines",
+    "LLM Integration",
+    "n8n",
+    "Node.js",
+    "Express",
+    "Flask",
+    "React",
+    "Next.js",
+    "React Native",
+    "TailwindCSS",
+    "PowerBI",
+    "Excel",
   ],
   softSkills: [
     "Problem Solving",
-    "Remote Collaboration",
+    "Communication",
     "Adaptability",
     "Critical Thinking",
-    "Communication",
-    "Team Leadership",
+    "Collaboration",
+    "System Ownership",
   ],
   languages: [
     {
-      name: "Portuguese",
+      name: "English",
+      level: "Professional",
+    },
+    {
+      name: "Filipino",
       level: "Native",
     },
-    {
-      name: "English",
-      level: "Professional (C2 Proficient)",
-      certificate: "EF SET English Certificate 82/100 (C2 Proficient)",
-    },
   ],
-  publications: [
-    {
-      title:
-        "Estratégias Pedagógicas para o Processo de Ensino-Aprendizagem de Algoritmos",
-      description:
-        "A publication exploring pedagogical strategies for teaching and learning algorithms.",
-      year: "2019",
-    },
-    {
-      title:
-        "Estudos de Técnicas de Mineração de Dados Aplicadas em Ambientes Sistematizados de Bibliotecas",
-      description:
-        "A study on data mining techniques applied to systematized library environments.",
-      year: "2018",
-    },
-    {
-      title:
-        "Carros de Combate na Selva: Utilização de VBCCCs no Teatro de Operações da Amazônia",
-      description:
-        "A publication on combat vehicles in jungle environments, focusing on operations in the Amazon.",
-      year: "2017",
-    },
-  ],
+  publications: [],
 };
 
 export default resumeData;

@@ -56,12 +56,14 @@ export default function ProjectsPage() {
                     </Button>
                   </Link>
                 )}
-                <Link href={`${project.github}?source=mgiovani.com`} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="border-white/20 hover:bg-white/10">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Button>
-                </Link>
+                {project.github && (
+                  <Link href={`${project.github}?source=mgiovani.com`} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="sm" className="border-white/20 hover:bg-white/10">
+                      <Github className="mr-2 h-4 w-4" />
+                      Repo
+                    </Button>
+                  </Link>
+                )}
               </div>
             </CardContent>
           </Card>

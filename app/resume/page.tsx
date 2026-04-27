@@ -26,9 +26,9 @@ export default function ResumePage() {
 
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Summary</h2>
-            <p>
-              {resumeData.personalInfo.yearsOfExperience} and {resumeData.personalInfo.teamLeadExperience}
-            </p>
+            {resumeData.summary.map((item, index) => (
+              <p key={index}>{item}</p>
+            ))}
           </div>
 
           <div className="space-y-6">
@@ -61,26 +61,14 @@ export default function ResumePage() {
             <h2 className="text-2xl font-bold">Skills</h2>
             <Card className="bg-zinc-900/50 border-zinc-800/50">
               <CardContent className="p-6 space-y-4">
-                <div>
-                  <h3 className="font-semibold">Languages & Frameworks</h3>
-                  <p className="text-muted-foreground">{resumeData.skills.languages.join(", ")}</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold">Architecture & Patterns</h3>
-                  <p className="text-muted-foreground">{resumeData.skills.architecture.join(", ")}</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold">Cloud & DevOps</h3>
-                  <p className="text-muted-foreground">{resumeData.skills.cloud.join(", ")}</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold">Data & Messaging</h3>
-                  <p className="text-muted-foreground">{resumeData.skills.data.join(", ")}</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold">Quality</h3>
-                  <p className="text-muted-foreground">{resumeData.skills.quality.join(", ")}</p>
-                </div>
+                {resumeData.skills.map((skillGroup) => (
+                  <div key={skillGroup.category}>
+                    <h3 className="font-semibold">{skillGroup.category}</h3>
+                    <p className="text-muted-foreground">
+                      {skillGroup.items.join(", ")}
+                    </p>
+                  </div>
+                ))}
               </CardContent>
             </Card>
           </div>

@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
         <div className="flex items-center gap-4">
           <Link
-            href="https://github.com/mgiovani"
+            href="https://github.com/Juaaanits"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary"
@@ -22,7 +22,7 @@ export default function Footer() {
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
-            href="https://linkedin.com/in/mgiovani"
+            href="https://linkedin.com/in/juanitoramos"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary"
