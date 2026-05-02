@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   description: string;
   image?: string | null;
+  category: "cloud" | "software-ai";
   tags: string[];
   github: string | null;
   demo: string | null;
@@ -14,8 +15,15 @@ const projects: Project[] = [
     title: "ExtractAI: AI-Powered Receipt Understanding System",
     description:
       "Built a two-stage AI pipeline using PaddleOCR and Gemini API to convert receipts into structured JSON outputs with confidence scoring, combining OCR, field extraction, and validation in a single workflow.",
-    image: null,
-    tags: ["Python", "OCR Pipeline", "Gemini API", "PaddleOCR", "Structured Data Extraction"],
+    image: "/images/ExtractaAI.png",
+    category: "software-ai",
+    tags: [
+      "Python",
+      "OCR Pipeline",
+      "Gemini API",
+      "PaddleOCR",
+      "Structured Data Extraction",
+    ],
     github: "https://github.com/Juaaanits/ExtractaAI",
     demo: "https://github.com/Juaaanits/ExtractaAI",
   },
@@ -24,8 +32,15 @@ const projects: Project[] = [
     title: "Containerized Monitoring System",
     description:
       "Designed and deployed a monitoring stack for MongoDB using Docker Compose, Prometheus, MongoDB Exporter, and Grafana to improve observability, performance tracking, and database health visibility.",
-    image: null,
-    tags: ["Docker Compose", "Prometheus", "Grafana", "MongoDB", "Observability"],
+    image: "/images/ContainerizedMonitoringSystem.png",
+    category: "cloud",
+    tags: [
+      "Docker Compose",
+      "Prometheus",
+      "Grafana",
+      "MongoDB",
+      "Observability",
+    ],
     github:
       "https://github.com/Juaaanits/setup-mongodb-monitoring-prometheus-grafana",
     demo: "https://github.com/Juaaanits/setup-mongodb-monitoring-prometheus-grafana",
@@ -35,7 +50,8 @@ const projects: Project[] = [
     title: "Breast Cancer Classification Using Logistic Regression",
     description:
       "Built a machine learning classification pipeline using StandardScaler and L2-regularized logistic regression, achieving 94.15% test accuracy, 0.9877 ROC-AUC, and 0.92 F1-score with Python, Scikit-learn, Pandas, and NumPy.",
-    image: null,
+    image: "/images/BreastCancerClassification.png",
+    category: "software-ai",
     tags: ["Python", "Scikit-learn", "Pandas", "NumPy", "Machine Learning"],
     github: "https://github.com/Juaaanits/breast-cancer-classification-lr",
     demo: "https://github.com/Juaaanits/breast-cancer-classification-lr",
@@ -45,69 +61,44 @@ const projects: Project[] = [
     title: "SortiPhy: Recyclable Waste Monitoring System (Thesis)",
     description:
       "Developed and deployed a deep learning model for real-time waste classification on Raspberry Pi with Arduino integration, achieving 95% training accuracy for embedded environmental monitoring.",
-    image: null,
+    image: "/images/SortiPhy.png",
+    category: "software-ai",
     tags: ["Python", "C++", "Raspberry Pi", "Arduino", "Edge AI"],
     github: "https://github.com/Juaaanits/sortiphy-thesis",
     demo: "https://github.com/Juaaanits/sortiphy-thesis",
   },
-  {
-    id: 4,
-    title: "AI Cursor Init",
-    description:
-      "The AI-powered documentation framework that lives inside your IDE. Generate Architecture Decision Records, system diagrams, and onboarding guides with simple slash commands.",
-    image:
-      "https://github.com/mgiovani/ai-cursor-init/raw/main/images/system-architecture-example.png",
-    tags: ["Developer Tooling", "Technical Documentation", "IDE Workflow", "Architecture Decision Records"],
-    github: "https://github.com/mgiovani/ai-cursor-init/",
-    demo: "https://github.com/mgiovani/ai-cursor-init/?tab=readme-ov-file#-visual-showcase",
-  },
-  {
-    id: 1,
-    title: "MyInstants Discord Bot",
-    description: "A discord bot to play MyInstants sounds to your friends.",
-    image:
-      "https://camo.githubusercontent.com/4b1917eff3bda4e61188df670776876b702136fb1dfb9fcbd4bdb8d68189069d/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f36314c4e416f324b39524c2e706e67",
-    tags: ["Python", "Discord Bot", "Automation", "API Integration"],
-    github: "https://github.com/mgiovani/my-instants-discord-bot",
-    demo: "https://discord.com/oauth2/authorize?client_id=836019264124354571",
-  },
-  {
-    id: 2,
-    title: "Base 16 Whatsapp Theme",
-    description: "A Whatsapp Web theme inspired by the Dark Base 16 colors.",
-    image:
-      "https://camo.githubusercontent.com/1b6684c7c3ad58073423a154fa0709eb215c096fec5aa32b6a430240aaa7ce55/68747470733a2f2f692e696d6775722e636f6d2f733134694f54392e706e67",
-    tags: ["CSS", "JavaScript", "Theming", "Frontend Customization"],
-    github: "https://github.com/mgiovani/base16-whatsapp",
-    demo: null,
-  },
-  {
-    id: 3,
-    title: "Covid Data Tracker",
-    description:
-      "API, OCR, and data extraction to track Covid cases in Montes Claros - Brazil.",
-    image: null,
-    tags: ["Python", "Go", "Docker", "Data Pipeline"],
-    github: "https://github.com/mgiovani/mocorona",
-    demo: null,
-  },
+
   {
     id: 9,
     title: "PresyoCheck",
     description:
       "Price-checking and comparison project focused on helping users inspect product pricing and related shopping information through a streamlined interface.",
-    image: null,
-    tags: ["Price Comparison", "Consumer Web App", "Product Search", "Frontend Development"],
+    image: "images/PresyoCheck.png",
+    category: "software-ai",
+    tags: [
+      "Consumer Web App",
+      "Product Price Search",
+      "Hackathon Project",
+      "Next.js",
+      "Supabase",
+    ],
     github: "https://github.com/Juaaanits/PresyoCheck",
-    demo: "https://github.com/Juaaanits/PresyoCheck",
+    demo: "https://presyo-check.vercel.app/",
   },
   {
     id: 10,
     title: "BrewBean",
     description:
       "Coffee-themed application project centered on product presentation, branding, and a polished frontend user experience.",
-    image: null,
-    tags: ["React", "Brand Identity", "UI/UX Design", "Frontend Development"],
+    image: "images/BrewBean.png",
+    category: "software-ai",
+    tags: [
+      "Docker",
+      "PHP",
+      "UI/UX Design",
+      "JavaScript",
+      "Frontend Development",
+    ],
     github: "https://github.com/Juaaanits/BrewBean",
     demo: "https://github.com/Juaaanits/BrewBean",
   },
@@ -115,19 +106,27 @@ const projects: Project[] = [
     id: 11,
     title: "IP Address Tracker Web",
     description:
-      "Web application for searching IP addresses and surfacing location and network information in an interactive, user-friendly format.",
-    image: null,
-    tags: ["Next.js", "IP Geolocation", "API Integration", "Responsive Web App"],
+      "IP Address Tracker is a responsive web app that detects and tracks IP addresses or domains, then displays geolocation details and map position in real time.",
+    image: "images/IPAddressTracker.png",
+    category: "software-ai",
+    tags: [
+      "JavaScript",
+      "IP Geolocation",
+      "API Integration",
+      "Responsive Web App",
+      "Frontend Challenge",
+    ],
     github: "https://github.com/Juaaanits/ip-address-tracker-web",
-    demo: "https://github.com/Juaaanits/ip-address-tracker-web",
+    demo: "https://ip-address-tracker-web.vercel.app/",
   },
   {
     id: 12,
     title: "FingerFlux",
     description:
-      "Interactive application project built around a gesture or touch-driven experience with a focus on frontend responsiveness and user interaction.",
-    image: null,
-    tags: ["Interactive UI", "User Interaction Design", "Frontend Engineering", "Responsive Design"],
+      "A real-time hand gesture control system using Python and Mediapipe to detect finger positions via webcam. Sends commands to Arduino/ESP32 to control LEDs, a servo motor, and an LCD, supporting both static and dynamic gestures with real-time feedback.",
+    image: "images/FingerFlux.png",
+    category: "software-ai",
+    tags: ["OpenCV", "Computer Vision", "Embedded Systems", "MediaPipe"],
     github: "https://github.com/Juaaanits/FingerFlux",
     demo: "https://github.com/Juaaanits/FingerFlux",
   },
@@ -136,8 +135,15 @@ const projects: Project[] = [
     title: "ShelfLifePlus Web",
     description:
       "Prototype web experience for ShelfLife+, an under-development agricultural logistics and intelligence platform focused on reducing food waste through NDVI-informed crop signals, in-transit IoT monitoring, and AI-assisted freshness assessment workflows.",
-    image: null,
-    tags: ["AgriTech", "Supply Chain Intelligence", "Prototype Platform", "Decision Support System"],
+    image: "images/ShelflifePlusWeb.png",
+    category: "software-ai",
+    tags: [
+      "AgriTech",
+      "NDVI Monitoring",
+      "IoT Monitoring",
+      "AI Freshness Assessment",
+      "Supply Chain Analytics",
+    ],
     github: null,
     demo: "https://shelflifeplus-web.vercel.app/",
   },
@@ -146,8 +152,14 @@ const projects: Project[] = [
     title: "NDVI Compare",
     description:
       "Comparison-focused project for working with NDVI-related data and visual outputs to support environmental or vegetation analysis workflows.",
-    image: null,
-    tags: ["Remote Sensing", "NDVI Analysis", "Geospatial Visualization", "Comparative Analytics"],
+    image: "images/NDVICompare.png",
+    category: "software-ai",
+    tags: [
+      "Remote Sensing",
+      "NDVI Analysis",
+      "Geospatial Visualization",
+      "Vegetation Index Comparison",
+    ],
     github: "https://github.com/Juaaanits/ndvi-compare",
     demo: "https://github.com/Juaaanits/ndvi-compare",
   },
@@ -156,8 +168,14 @@ const projects: Project[] = [
     title: "Sunspot Time Series Prediction",
     description:
       "Time series forecasting project that models sunspot activity patterns to explore predictive analytics and sequential data behavior.",
-    image: null,
-    tags: ["Python", "Time Series Forecasting", "Predictive Modeling", "Machine Learning"],
+    image: "images/SunspotTimeSeriesPrediction.png",
+    category: "software-ai",
+    tags: [
+      "Python",
+      "Time Series Forecasting",
+      "Sequential Data Analysis",
+      "Machine Learning",
+    ],
     github: "https://github.com/Juaaanits/sunspot-time-series-prediction",
     demo: "https://github.com/Juaaanits/sunspot-time-series-prediction",
   },
@@ -166,20 +184,32 @@ const projects: Project[] = [
     title: "Linear Regression Energy Efficiency Dataset",
     description:
       "Regression-based machine learning project analyzing an energy efficiency dataset to model and evaluate predictive relationships in structured data.",
-    image: null,
-    tags: ["Python", "Linear Regression", "Energy Efficiency Modeling", "Data Science"],
+    image: "images/EnergyEfficiency.png",
+    category: "software-ai",
+    tags: [
+      "Python",
+      "Linear Regression",
+      "Regression Analysis",
+      "Energy Efficiency Prediction",
+    ],
     github:
       "https://github.com/Juaaanits/linear-regression-energy-efficiency-dataset",
-    demo:
-      "https://github.com/Juaaanits/linear-regression-energy-efficiency-dataset",
+    demo: "https://github.com/Juaaanits/linear-regression-energy-efficiency-dataset",
   },
   {
     id: 17,
     title: "EDA Spotify Songs",
     description:
       "Exploratory data analysis project examining Spotify song attributes, trends, and distributions to surface patterns in music data.",
-    image: null,
-    tags: ["Exploratory Data Analysis", "Python", "Spotify Dataset", "Data Visualization"],
+    image: "images/SpotifySongs.png",
+    category: "software-ai",
+    tags: [
+      "Exploratory Data Analysis",
+      "Python",
+      "Spotify Dataset",
+      "Music Data Analysis",
+      "Data Visualization",
+    ],
     github: "https://github.com/Juaaanits/EDA-Spotify-Songs",
     demo: "https://github.com/Juaaanits/EDA-Spotify-Songs",
   },
@@ -187,9 +217,15 @@ const projects: Project[] = [
     id: 18,
     title: "Cinema Ticketing System",
     description:
-      "Ticketing system project for managing cinema reservations, booking flows, and related customer-facing or administrative operations.",
+      "This is a console-based Cinema Ticketing and Snack Availment System built using C++. It simulates a real-world cinema point-of-sale experience, enabling customers to purchase movie tickets, receive applicable discounts, buy snacks, and get a detailed official receipt — all from the terminal.",
     image: null,
-    tags: ["System Design", "Booking Workflow", "Database Management", "CRUD Application"],
+    category: "software-ai",
+    tags: [
+      "Ticket Booking System",
+      "CRUD Application",
+      "C++",
+      "Reservation Workflow",
+    ],
     github: "https://github.com/Juaaanits/cinema-ticketing-system",
     demo: "https://github.com/Juaaanits/cinema-ticketing-system",
   },
@@ -198,8 +234,14 @@ const projects: Project[] = [
     title: "Predictive Modeling for Agriculture",
     description:
       "Agriculture-focused predictive modeling project applying machine learning techniques to data-driven decision support in farming contexts.",
-    image: null,
-    tags: ["Machine Learning", "Agricultural Analytics", "Predictive Modeling", "Python"],
+    image: "images/PredictiveModelingForAgriculture.png",
+    category: "software-ai",
+    tags: [
+      "Machine Learning",
+      "Agricultural Analytics",
+      "Predictive Modeling",
+      "Decision Support Systems",
+    ],
     github: "https://github.com/Juaaanits/predictive-modeling-for-agriculture",
     demo: "https://github.com/Juaaanits/predictive-modeling-for-agriculture",
   },
@@ -208,18 +250,31 @@ const projects: Project[] = [
     title: "Random Quote Machine",
     description:
       "Frontend application that serves and displays quotes through a lightweight interactive interface built for quick engagement and clean presentation.",
-    image: null,
-    tags: ["JavaScript", "Frontend Development", "API Consumption", "Interactive UI"],
+    image: "images/RandomQuoteMachine.png",
+    category: "software-ai",
+    tags: [
+      "React",
+      "TypeScript",
+      "Frontend Development",
+      "Quote API",
+      "Interactive UI",
+    ],
     github: "https://github.com/Juaaanits/random-quote-machine",
-    demo: "https://github.com/Juaaanits/random-quote-machine",
+    demo: "https://random-quote-machine-mu-azure.vercel.app/",
   },
   {
     id: 21,
     title: "Cybersecurity Attack Classification",
     description:
       "Classification project focused on identifying or categorizing cybersecurity attack patterns using machine learning on security-related datasets.",
-    image: null,
-    tags: ["Cybersecurity", "Attack Classification", "Machine Learning", "Security Analytics"],
+    image: "images/CybersecurityAttackClassification.png",
+    category: "software-ai",
+    tags: [
+      "Cybersecurity",
+      "Threat Classification",
+      "Machine Learning",
+      "Security Analytics",
+    ],
     github: "https://github.com/Juaaanits/cybersecurity-attack-classification",
     demo: "https://github.com/Juaaanits/cybersecurity-attack-classification",
   },
@@ -228,8 +283,9 @@ const projects: Project[] = [
     title: "Telegram Weather Notification Bot",
     description:
       "Automation bot that delivers weather updates through Telegram, combining messaging workflows with notification-based user utility.",
-    image: null,
-    tags: ["Telegram Bot", "Weather API", "Automation", "Notification System"],
+    image: "images/TelegramWeatherNotificationBot.png",
+    category: "software-ai",
+    tags: ["Telegram Bot", "Weather API", "Automation", "Alert Notifications"],
     github: "https://github.com/Juaaanits/telegram-weather-notification-bot",
     demo: "https://github.com/Juaaanits/telegram-weather-notification-bot",
   },
@@ -238,8 +294,9 @@ const projects: Project[] = [
     title: "SmartTrafficLight System",
     description:
       "Smart traffic light project exploring automated or intelligent traffic control logic for responsive transportation scenarios.",
-    image: null,
-    tags: ["Embedded Systems", "IoT", "Traffic Control", "Automation"],
+    image: "images/SmartTrafficLightSystem.png",
+    category: "software-ai",
+    tags: ["Embedded Systems", "IoT", "Traffic Signal Control", "Arduino"],
     github: "https://github.com/Juaaanits/SmartTrafficLight-System",
     demo: "https://github.com/Juaaanits/SmartTrafficLight-System",
   },
@@ -247,9 +304,16 @@ const projects: Project[] = [
     id: 24,
     title: "Fashion MNIST Classification",
     description:
-      "Computer vision classification project using the Fashion-MNIST dataset to train and evaluate image recognition models.",
-    image: null,
-    tags: ["Deep Learning", "Computer Vision", "Image Classification", "Python"],
+      "This project follows an approach inspired by TensorFlow’s official tutorial to build a neural network capable of classifying images of clothing. It uses the Fashion MNIST dataset to train a model that can identify various apparel categories, including shirts, shoes, bags, and other items..",
+    image: "images/FashionMNISTClassification.png",
+    category: "software-ai",
+    tags: [
+      "Python",
+      "TensorFlow",
+      "Neural Networks",
+      "Image Classification",
+      "Fashion MNIST Dataset",
+    ],
     github: "https://github.com/Juaaanits/Fashion-MNIST-Classification",
     demo: "https://github.com/Juaaanits/Fashion-MNIST-Classification",
   },
@@ -258,24 +322,87 @@ const projects: Project[] = [
     title: "Adventure Work Dashboard",
     description:
       "Dashboard project for analyzing and presenting business or operational metrics with a focus on reporting and decision support.",
-    image: null,
-    tags: ["Business Intelligence", "Dashboard Development", "Data Visualization", "Reporting"],
+    image: "images/AdventureWorkDashboard.png",
+    category: "software-ai",
+    tags: [
+      "Business Intelligence",
+      "Power BI",
+      "Data Visualization",
+      "Reporting",
+    ],
     github: "https://github.com/Juaaanits/Adventure-Work-Dashboard",
     demo: "https://github.com/Juaaanits/Adventure-Work-Dashboard",
+  },
+  {
+    id: 27,
+    title: "Palindrome Checker",
+    description:
+      "A simple web application to check if a given string is a palindrome.",
+    image: "images/PalindromeChecker.png",
+    category: "software-ai",
+    tags: [
+      "JavaScript",
+      "Palindrome Checker",
+      "Web Application",
+      "String Manipulation",
+    ],
+    github: "https://github.com/Juaaanits/Palindrome-Checker",
+    demo: "https://palindrome-checker-eosin.vercel.app/",
   },
   {
     id: 26,
     title: "Address Book",
     description:
-      "Contact management application for storing, organizing, and retrieving address book records through a structured interface.",
+      "This is a console-based Address Book Management System built using Python. It allows users to manage their contacts by adding, editing, deleting, viewing, and searching for contacts. The system stores contact information such as first name, last name, address, and phone number. It provides a simple and interactive menu for users to perform operations on the address book.",
     image: null,
-    tags: ["CRUD Application", "Database Management", "Contact Management", "Software Development"],
+    category: "software-ai",
+    tags: [
+      "Python",
+      "Contact Management",
+      "CRUD Application",
+      "Console Application",
+    ],
     github: "https://github.com/Juaaanits/Address-Book",
     demo: "https://github.com/Juaaanits/Address-Book",
   },
+  {
+    id: 27,
+    title: "AWS Cloud Architecture Design - Park Wan Ji Hospitality Group",
+    description:
+      "Designed a secure and scalable AWS cloud architecture to support Park Wan Ji Hospitality Group's migration from on-premise infrastructure, covering network design, compute and storage planning, and high-availability patterns for enterprise workloads.",
+    image: "images/ParkWanJiAWSCloudArchitecture.png",
+    category: "cloud",
+    tags: ["AWS", "Network Design", "Cloud Architecture", "High Availability"],
+    github: null,
+    demo: "https://docs.google.com/presentation/d/1UaijASfm6irGjTzFde9u8pR0oHo_jVr1/edit?slide=id.p2#slide=id.p2",
+  },
+  {
+    id: 28,
+    title: "Automated AWS Web Hosting with Terraform",
+    description:
+      "An Infrastructure-as-Code (IaC) project that provisions a high-availability static website architecture on AWS. It integrates S3 for secure storage, CloudFront for global content delivery, and Route 53 with ACM for automated DNS and SSL management.",
+    image: "/images/AutomatedAWSWebHostingWithTerraform.png",
+    category: "cloud",
+    tags: [
+      "AWS",
+      "Terraform",
+      "Infrastructure as Code",
+      "S3 Static Website",
+      "CloudFront CDN",
+      "Route 53 DNS",
+      "ACM SSL Management",
+    ],
+    github:
+      "https://github.com/Juaaanits/Automated-AWS-Web-Hosting-with-Terraform",
+    demo: "https://juanito-ramos-dev.site/",
+  },
 ];
 
-export const featuredProjects = [projects[0], projects[1], projects[2]];
+export const featuredProjects = [
+  projects.find((project) => project.id === 5)!,
+  projects.find((project) => project.id === 6)!,
+  projects.find((project) => project.id === 7)!,
+];
 
 export default {
   projects,

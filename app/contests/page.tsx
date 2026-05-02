@@ -99,12 +99,11 @@ export default function ContestsPage() {
                       href={contest.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1"
                     >
                       <Button
                         variant="default"
                         size="sm"
-                        className="w-full bg-white text-black hover:bg-zinc-200 group"
+                        className="bg-white text-black hover:bg-zinc-200"
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Demo
@@ -116,12 +115,11 @@ export default function ContestsPage() {
                       href={`${contest.github}?source=mgiovani.com`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1"
                     >
                       <Button
                         variant="outline"
                         size="sm"
-                        className="w-full border-white/20 hover:bg-white/10 group"
+                        className="border-white/20 hover:bg-white/10"
                       >
                         <Github className="mr-2 h-4 w-4" />
                         Repo

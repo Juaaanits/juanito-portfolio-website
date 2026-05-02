@@ -96,7 +96,7 @@ const resumeData: ResumeData = {
     {
       category: "AI & Machine Learning",
       items: [
-        "Python",
+        "PyTorch",
         "TensorFlow",
         "Keras",
         "Scikit-learn",

@@ -1,6 +1,7 @@
 import { ServerHeroSection } from "@/components/server-hero-section"
 import { FeaturedProjects } from "@/components/featured-projects"
 import { FeaturedContests } from "@/components/featured-contests"
+import { FeaturedCertifications } from "@/components/featured-certifications"
 import { ArrowRight, Code2 } from "lucide-react"
 import Link from "next/link"
 import resumeData from "@/data/resume-data"
@@ -36,6 +37,10 @@ export default function Home() {
         {/* Featured Projects Section */}
         <div className="mt-24 w-full">
           <FeaturedProjects />
+        </div>
+
+        <div className="mt-24 w-full">
+          <FeaturedCertifications />
         </div>
 
         <div className="mt-24 w-full">
