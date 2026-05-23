@@ -308,7 +308,7 @@ juanito-portfolio-website/
 | Cloud and DevOps        | AWS architecture design, Terraform hosting, monitoring stack     |
 | AI and Machine Learning | OCR pipelines, classification, regression, forecasting, EDA      |
 | Embedded and IoT        | SortiPhy, FingerFlux, SmartTrafficLight System                   |
-| Full-Stack and Frontend | PresyoCheck, IP Address Tracker, Random Quote Machine            |
+| Web Development         | PresyoCheck, IP Address Tracker, Random Quote Machine            |
 | Data and Analytics      | Power BI dashboard, Spotify EDA, agriculture predictive modeling |
 
 ### Awards and Competitions
