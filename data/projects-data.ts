@@ -11,6 +11,18 @@ export type Project = {
 
 const projects: Project[] = [
   {
+    id: 29,
+    title:
+      "CerebraSense - Deep Learning-based Brain Tumor MRI Classification Web Application",
+    description:
+      "Developed a web application that utilizes a deep learning model to classify brain tumor types from MRI scans. The application provides an intuitive interface for users to upload MRI images and receive real-time classification results, leveraging Python for the backend and a modern web framework for the frontend.",
+    image: "/images/CerebraSense-Brain-Tumor-MRI-Classification.png",
+    category: "software-ai",
+    tags: ["Python", "Deep Learning", "MRI Classification", "Web Application"],
+    github: "https://github.com/Juaaanits/Cerebrasense-Web",
+    demo: "https://cerebrasense-web.vercel.app/",
+  },
+  {
     id: 5,
     title: "ExtractAI: AI-Powered Receipt Understanding System",
     description:
@@ -46,17 +58,6 @@ const projects: Project[] = [
     demo: "https://github.com/Juaaanits/setup-mongodb-monitoring-prometheus-grafana",
   },
   {
-    id: 7,
-    title: "Breast Cancer Classification Using Logistic Regression",
-    description:
-      "Built a machine learning classification pipeline using StandardScaler and L2-regularized logistic regression, achieving 94.15% test accuracy, 0.9877 ROC-AUC, and 0.92 F1-score with Python, Scikit-learn, Pandas, and NumPy.",
-    image: "/images/BreastCancerClassification.png",
-    category: "software-ai",
-    tags: ["Python", "Scikit-learn", "Pandas", "NumPy", "Machine Learning"],
-    github: "https://github.com/Juaaanits/breast-cancer-classification-lr",
-    demo: "https://github.com/Juaaanits/breast-cancer-classification-lr",
-  },
-  {
     id: 8,
     title: "SortiPhy: Recyclable Waste Monitoring System (Thesis)",
     description:
@@ -66,6 +67,17 @@ const projects: Project[] = [
     tags: ["Python", "C++", "Raspberry Pi", "Arduino", "Edge AI"],
     github: "https://github.com/Juaaanits/sortiphy-thesis",
     demo: "https://github.com/Juaaanits/sortiphy-thesis",
+  },
+  {
+    id: 7,
+    title: "Breast Cancer Classification Using Logistic Regression",
+    description:
+      "Built a machine learning classification pipeline using StandardScaler and L2-regularized logistic regression, achieving 94.15% test accuracy, 0.9877 ROC-AUC, and 0.92 F1-score with Python, Scikit-learn, Pandas, and NumPy.",
+    image: "/images/BreastCancerClassification.png",
+    category: "software-ai",
+    tags: ["Python", "Scikit-learn", "Pandas", "NumPy", "Machine Learning"],
+    github: "https://github.com/Juaaanits/breast-cancer-classification-lr",
+    demo: "https://github.com/Juaaanits/breast-cancer-classification-lr",
   },
 
   {
@@ -399,9 +411,9 @@ const projects: Project[] = [
 ];
 
 export const featuredProjects = [
+  projects.find((project) => project.id === 29)!,
+  projects.find((project) => project.id === 28)!,
   projects.find((project) => project.id === 5)!,
-  projects.find((project) => project.id === 6)!,
-  projects.find((project) => project.id === 7)!,
 ];
 
 export default {
