@@ -2,13 +2,18 @@ import { BlogPostPageClient } from "./BlogPostPageClient"
 import type { Metadata } from "next"
 import { getPostData, getAllPostSlugs } from "@/lib/posts"
 
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }>
+}
+
 export async function generateStaticParams() {
   const posts = getAllPostSlugs()
   return posts
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const postData = await getPostData(params.slug)
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const postData = await getPostData(slug)
 
   if (!postData) {
     return {
@@ -35,7 +40,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const postData = await getPostData(params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const postData = await getPostData(slug)
   return <BlogPostPageClient postData={postData} />
 }

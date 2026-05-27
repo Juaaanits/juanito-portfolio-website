@@ -1,10 +1,10 @@
-import { ServerHeroSection } from "@/components/server-hero-section"
-import { FeaturedProjects } from "@/components/featured-projects"
-import { FeaturedContests } from "@/components/featured-contests"
-import { FeaturedCertifications } from "@/components/featured-certifications"
-import { ArrowRight, Code2 } from "lucide-react"
-import Link from "next/link"
-import resumeData from "@/data/resume-data"
+import { FeaturedCertifications } from "@/components/featured-certifications";
+import { FeaturedContests } from "@/components/featured-contests";
+import { FeaturedProjects } from "@/components/featured-projects";
+import { ServerHeroSection } from "@/components/server-hero-section";
+import resumeData from "@/data/resume-data";
+import { ArrowRight, Code2 } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,9 +22,14 @@ export default function Home() {
             <h2 className="text-3xl font-bold">About Me</h2>
           </div>
           <div className="space-y-6">
-            <p className="text-muted-foreground leading-relaxed text-lg max-w-none">{resumeData.summary[0]}</p>
+            <p className="text-muted-foreground leading-relaxed text-lg max-w-none">
+              {resumeData.summary[0]}
+            </p>
             <div>
-              <Link href="/resume" className="inline-flex items-center text-primary hover:text-primary/80 group">
+              <Link
+                href="/resume"
+                className="inline-flex items-center text-primary hover:text-primary/80 group"
+              >
                 <span className="underline underline-offset-4 decoration-primary/30 group-hover:decoration-primary/60 transition-colors">
                   View my full resume
                 </span>
@@ -48,5 +53,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
