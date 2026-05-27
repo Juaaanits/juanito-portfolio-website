@@ -62,9 +62,7 @@ export function getAllPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory)
   return fileNames.map((fileName) => {
     return {
-      params: {
-        slug: fileName.replace(/\.md$/, ""),
-      },
+      slug: fileName.replace(/\.md$/, ""),
     }
   })
 }

@@ -33,11 +33,12 @@
 8. [Getting Started](#getting-started)
 9. [Environment Variables](#environment-variables)
 10. [Available Scripts](#available-scripts)
-11. [API Reference](#api-reference)
-12. [Content Editing Guide](#content-editing-guide)
-13. [Deployment Notes](#deployment-notes)
-14. [Future Improvements](#future-improvements)
-15. [Connect With Me](#connect-with-me)
+11. [CI/CD Pipeline](#cicd-pipeline)
+12. [API Reference](#api-reference)
+13. [Content Editing Guide](#content-editing-guide)
+14. [Deployment Notes](#deployment-notes)
+15. [Future Improvements](#future-improvements)
+16. [Connect With Me](#connect-with-me)
 
 ---
 
@@ -167,6 +168,11 @@ Production Portfolio Deployment
 
 ```txt
 juanito-portfolio-website/
+|
+|-- .github/
+|   `-- workflows/
+|       `-- ci-cd.yml                 # GitHub Actions CI/CD workflow
+|
 |-- app/
 |   |-- api/
 |   |   `-- resume-pdf/
@@ -432,8 +438,53 @@ Never commit real secrets or production credentials.
 | :-------------- | :----------------------------------------- |
 | `npm run dev`   | Start the Next.js development server       |
 | `npm run build` | Build the production application           |
+| `npm run typecheck` | Run TypeScript checks without emitting files |
+| `npm run ci`    | Run the local CI quality gate              |
 | `npm run start` | Start the production server after building |
 | `npm run lint`  | Run the configured Next.js lint command    |
+
+---
+
+## CI/CD Pipeline
+
+The repository includes a GitHub Actions workflow at:
+
+```txt
+.github/workflows/ci-cd.yml
+```
+
+### Continuous Integration
+
+The `Verify` job runs on pull requests, pushes to `main`, and manual workflow dispatches:
+
+```bash
+npm ci
+npm run ci
+```
+
+`npm run ci` currently runs:
+
+```bash
+npm run build && npm run typecheck
+```
+
+This builds first so Next.js generates App Router route types, then runs TypeScript against the full project. It is intentionally stricter than the Vercel build settings because `next.config.mjs` allows production builds to ignore TypeScript and ESLint build errors.
+
+### Continuous Deployment
+
+The `Deploy production to Vercel` job runs only after `Verify` passes on a push to `main`.
+
+Required GitHub repository secrets:
+
+| Secret | Purpose |
+| :----- | :------ |
+| `VERCEL_TOKEN` | Vercel access token used by the CLI |
+| `VERCEL_ORG_ID` | Vercel team or user ID |
+| `VERCEL_PROJECT_ID` | Vercel project ID for this portfolio |
+
+To find the Vercel IDs locally, link the project with the Vercel CLI and inspect the generated `.vercel/project.json` file. Do not commit the `.vercel/` directory.
+
+If Vercel Git integration is already enabled for this repository, disable one of the deployment paths to avoid duplicate production deployments: either keep Vercel's built-in Git deployment and remove the deploy job, or keep this GitHub Actions deployment workflow.
 
 ---
 
@@ -582,7 +633,8 @@ https://juanito-portfolio-website.vercel.app/
 
 ### Version 3 - Engineering Improvements
 
-- Re-enable strict build blocking after TypeScript and ESLint issues are cleaned up
+- Add an ESLint configuration and include linting in CI
+- Remove `ignoreBuildErrors` and `ignoreDuringBuilds` from `next.config.mjs` after strict build validation is ready
 - Add unit tests for data normalization and blog parsing
 - Add Playwright smoke tests for core pages
 - Add automated screenshot generation for README assets

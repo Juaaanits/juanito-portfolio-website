@@ -29,7 +29,7 @@ export function FeaturedBlogPosts({ className, showViewAll = true }: FeaturedBlo
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredBlogPosts.map((post) => (
-          <Card key={post.id} className="overflow-hidden bg-zinc-900/50 border-zinc-800/50">
+          <Card key={post.slug} className="overflow-hidden bg-zinc-900/50 border-zinc-800/50">
             <div className="aspect-video w-full overflow-hidden">
               {post.image ? (
                 <img
