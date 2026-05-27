@@ -6,8 +6,6 @@ import resumeData from "@/data/resume-data";
 import { ArrowRight, Code2 } from "lucide-react";
 import Link from "next/link";
 
-const ciDemo: string = 123;
-
 export default function Home() {
   return (
     <div className="min-h-[calc(100vh-4rem)]">
